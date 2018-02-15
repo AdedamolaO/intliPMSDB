@@ -21,5 +21,5 @@
     [updated_by] INT NULL, 
     [replication_status] BIT NULL, 
     CONSTRAINT [FK_Company_ToHotel] FOREIGN KEY ([Hotel_id]) REFERENCES [Hotel]([hotel_id]), 
-    CONSTRAINT [FK_Company_ToEmployee_department] FOREIGN KEY ([Depertment_id]) REFERENCES [employee_department]([Emp_dept_id]),
+    CONSTRAINT [FK_Company_ToEmployee_department] FOREIGN KEY ([Department_id]) REFERENCES [employee_department]([Emp_dept_id]),
 )
