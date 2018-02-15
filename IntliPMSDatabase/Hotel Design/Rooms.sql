@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[Rooms]
+(
+	[Room_id] INT NOT NULL PRIMARY KEY, 
+    [Room_type_id] INT NOT NULL, 
+    [Hotel_id] INT NOT NULL, 
+    [Building_id] INT NOT NULL, 
+    [Room_number] INT NOT NULL, 
+    [Room_name] VARCHAR(50) NULL, 
+    [Room_notes] TEXT NULL, 
+    [Room_des_extra] TEXT NULL, 
+    [Room_status] INT NULL, 
+    [Room_prom_rate] INT NULL, 
+    [Room_base_rate] INT NULL, 
+    [Room_size] VARCHAR(50) NULL, 
+    [Room_bed_size] VARCHAR(50) NULL, 
+    [Room_HK_Status] INT NULL, 
+    [date_created] DATETIME NULL, 
+    [created_by] INT NULL, 
+    [date_updated] DATETIME NULL, 
+    [updated_by] INT NULL, 
+    [replication_status] BIT NULL, 
+    CONSTRAINT [FK_Rooms_ToRoom_Type] FOREIGN KEY ([Room_type_id]) REFERENCES [Room_Type]([Room_type_id]), 
+    CONSTRAINT [FK_Rooms_ToTHotel] FOREIGN KEY ([Hotel_id]) REFERENCES [Hotel]([hotel_id]), 
+    CONSTRAINT [FK_Rooms_ToBuilding] FOREIGN KEY ([Building_id]) REFERENCES [Building]([Building_id]) 
+)

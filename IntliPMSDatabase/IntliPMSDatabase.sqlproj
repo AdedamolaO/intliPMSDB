@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>IntliPMSDatabase</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{7e8a3984-d6c1-4c4b-930c-24a683fbfc7b}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>IntliPMSDatabase</RootNamespace>
+    <AssemblyName>IntliPMSDatabase</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultSchema>dbo</DefaultSchema>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Customer" />
+    <Folder Include="Employee" />
+    <Folder Include="Hotel Design" />
+    <Folder Include="Maintanance Design" />
+    <Folder Include="Lundary Design" />
+    <Folder Include="Inventory Design" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="IntliPMSDatabase.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Customer\Customer.sql" />
+    <Build Include="employee\Employee_timeoff_log.sql" />
+    <Build Include="employee\Employee_address.sql" />
+    <Build Include="employee\Employee_debit_log.sql" />
+    <Build Include="employee\employee_department.sql" />
+    <Build Include="employee\employee_department_log.sql" />
+    <Build Include="employee\Employee_master.sql" />
+    <Build Include="Customer\Company.sql" />
+    <Build Include="Customer\Company_Customer.sql" />
+    <Build Include="Customer\Customer_activity_Type.sql" />
+    <Build Include="Customer\Customer_activity_log.sql" />
+    <Build Include="Customer\Customer_room_rate.sql" />
+    <Build Include="Hotel Design\Hotel.sql" />
+    <Build Include="Hotel Design\Hotel_Amnity_Type.sql" />
+    <Build Include="Hotel Design\Hotel_Amenities.sql" />
+    <Build Include="Hotel Design\Building.sql" />
+    <Build Include="Hotel Design\Room_Type.sql" />
+    <Build Include="Hotel Design\Room_Type_Amenity.sql" />
+    <Build Include="Hotel Design\Room_Type_Amenities.sql" />
+    <Build Include="Hotel Design\Promotion_Type.sql" />
+    <Build Include="Hotel Design\Room_status.sql" />
+    <Build Include="Hotel Design\Rooms.sql" />
+    <Build Include="Hotel Design\booking_log.sql" />
+    <Build Include="Hotel Design\booking_dtls_log.sql" />
+    <Build Include="Hotel Design\Check_in_log.sql" />
+    <Build Include="Hotel Design\Room_clean_log.sql" />
+    <Build Include="Hotel Design\Room_clean_dtls_log.sql" />
+    <Build Include="Hotel Design\Room_Insp_log.sql" />
+    <Build Include="Hotel Design\Room_inspection_log.sql" />
+    <Build Include="Maintanance Design\Property_Areas.sql" />
+    <Build Include="Maintanance Design\Property_sch_maint.sql" />
+    <Build Include="Maintanance Design\Property_sch_maint_log.sql" />
+    <Build Include="Maintanance Design\maint_request.sql" />
+    <Build Include="Maintanance Design\maint_costing.sql" />
+    <Build Include="Maintanance Design\maint_aproval.sql" />
+    <Build Include="Maintanance Design\maint_funds.sql" />
+    <Build Include="Lundary Design\Lundary_asset.sql" />
+    <Build Include="Lundary Design\Lundary_asset_list.sql" />
+    <Build Include="Lundary Design\Lundary_Type.sql" />
+    <Build Include="Lundary Design\Lundary_Inbound.sql" />
+    <Build Include="Lundary Design\Lundary_Inbound_log.sql" />
+    <Build Include="Lundary Design\Lundary_Invt_items.sql" />
+    <Build Include="Lundary Design\Lundary_Invt_log.sql" />
+    <Build Include="Inventory Design\Inventory_master.sql" />
+    <Build Include="Inventory Design\Inventory_activity.sql" />
+    <Build Include="Inventory Design\Inventory_vendors.sql" />
+    <Build Include="Inventory Design\Menu_combo_items.sql" />
+    <Build Include="Inventory Design\Sales_menu.sql" />
+    <Build Include="Inventory Design\Sales_menu_detail.sql" />
+    <Build Include="Inventory Design\Inventory_audit.sql" />
+    <Build Include="Inventory Design\Inventory_audit_detail.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="employee\employee_phones.sql" />
+    <Build Include="employee\Employee_Schedule_log.sql" />
+  </ItemGroup>
+</Project>
