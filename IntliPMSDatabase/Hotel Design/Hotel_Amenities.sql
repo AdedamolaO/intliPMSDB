@@ -1,13 +1,14 @@
 ﻿CREATE TABLE [dbo].[Hotel_Amenities]
 (
-	[Amenity_id] INT NOT NULL PRIMARY KEY, 
-    [Amenity_type_id] INT NOT NULL, 
-    [Hotel_id] INT NOT NULL, 
+	[Amenity_id] INT NOT NULL IDENTITY(1,1) PRIMARY KEY, 
+    [Aminity_Desc] TEXT NOT NULL, 
+    [Hotel_Id] VARCHAR(50) NOT NULL, 
     [date_created] DATETIME NOT NULL, 
-    [created_by] INT NOT NULL, 
+    [created_by] VARCHAR(50) NOT NULL, 
     [date_updated] DATETIME NOT NULL, 
-    [updated_by] INT NOT NULL, 
+    [updated_by] VARCHAR(50) NOT NULL, 
     [replication_status] BIT NULL, 
-    CONSTRAINT [FK_Hotel_Amenities_ToHotel] FOREIGN KEY ([Hotel_id]) REFERENCES [Hotel]([hotel_id]), 
-    CONSTRAINT [FK_Hotel_Amenities_ToHotelAmnity_Type] FOREIGN KEY ([Amenity_type_id]) REFERENCES [Hotel_Amnity_Type]([Aminity_Type_id])
+    [isKeyArea] BIT NULL, 
+    CONSTRAINT [FK_Hotel_Amenities_ToHotel] FOREIGN KEY ([Hotel_Id]) REFERENCES [Hotel]([Hotel_Id]), 
+  
 )

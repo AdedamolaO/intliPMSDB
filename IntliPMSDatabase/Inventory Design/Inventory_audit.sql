@@ -1,14 +1,16 @@
 ﻿CREATE TABLE [dbo].[Inventory_audit]
 (
 	[Audit_Id] INT NOT NULL PRIMARY KEY, 
-    [Hotel_id] NCHAR(10) NULL, 
-    [Depart_id] NCHAR(10) NULL, 
-    [Invent_location_id] NCHAR(10) NULL, 
-    [Effective_date] NCHAR(10) NULL, 
-    [Effective_time] NCHAR(10) NULL, 
-    [date_created] NCHAR(10) NULL, 
-    [created_by] NCHAR(10) NULL, 
-    [date_updated] NCHAR(10) NULL, 
-    [updated_by] NCHAR(10) NULL, 
-    [replication_status] NCHAR(10) NULL
+    [Hotel_Id] VARCHAR(50) NULL, 
+    [Depart_id] INT NULL, 
+    [Invent_location_id] INT NULL, 
+    [Effective_date] DATE NULL, 
+    [Effective_time] TIMESTAMP NULL, 
+    [date_created] DATETIME NULL, 
+    [created_by] INT NULL, 
+    [date_updated] DATETIME NULL, 
+    [updated_by] INT NULL, 
+    [replication_status] BIT NULL, 
+    CONSTRAINT [FK_Inventory_audit_ToHotel] FOREIGN KEY ([Hotel_Id]) REFERENCES [Hotel]([Hotel_Id]), 
+    CONSTRAINT [FK_Inventory_audit_ToEmployee_Department] FOREIGN KEY ([Depart_id]) REFERENCES [employee_department]([Emp_dept_id])
 )

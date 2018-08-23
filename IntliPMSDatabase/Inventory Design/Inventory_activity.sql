@@ -1,17 +1,17 @@
 ﻿CREATE TABLE [dbo].[Inventory_activity]
 (
 	[Id] INT NOT NULL PRIMARY KEY, 
-    [customer_id] NCHAR(10) NULL, 
-    [Act_type_id] NCHAR(10) NULL, 
-    [Act_hotel_id] NCHAR(10) NULL, 
-    [Act_depart_id] NCHAR(10) NULL, 
-    [Act_ref_info] NCHAR(10) NULL, 
-    [Act_debit] NCHAR(10) NULL, 
-    [Act_credit] NCHAR(10) NULL, 
-    [Act_Balance] NCHAR(10) NULL, 
-    [date_created] NCHAR(10) NULL, 
-    [created_by] NCHAR(10) NULL, 
-    [date_updated] NCHAR(10) NULL, 
-    [updated_by] NCHAR(10) NULL, 
-    [replication_status] NCHAR(10) NULL
+    [customer_id] INT NULL, 
+    [Act_type_id] INT NULL, 
+    [Act_hotel_id] INT NULL, 
+    [Act_depart_id] INT NULL, 
+    [Act_ref_info] TEXT NULL, 
+    [Act_debit] MONEY NULL, 
+    [Act_credit] MONEY NULL, 
+    [Act_Balance] MONEY NULL, 
+    [date_created] DATETIME NULL, 
+    [created_by] INT NULL, 
+    [date_updated] DATETIME NULL, 
+    [updated_by] INT NULL, 
+    [replication_status] BIT NULL
 )

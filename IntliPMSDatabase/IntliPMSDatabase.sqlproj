@@ -64,6 +64,8 @@
     <Folder Include="Maintanance Design" />
     <Folder Include="Lundary Design" />
     <Folder Include="Inventory Design" />
+    <Folder Include="Users" />
+    <Folder Include="FB" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="IntliPMSDatabase.refactorlog" />
@@ -82,7 +84,6 @@
     <Build Include="Customer\Customer_activity_log.sql" />
     <Build Include="Customer\Customer_room_rate.sql" />
     <Build Include="Hotel Design\Hotel.sql" />
-    <Build Include="Hotel Design\Hotel_Amnity_Type.sql" />
     <Build Include="Hotel Design\Hotel_Amenities.sql" />
     <Build Include="Hotel Design\Building.sql" />
     <Build Include="Hotel Design\Room_Type.sql" />
@@ -120,6 +121,39 @@
     <Build Include="Inventory Design\Sales_menu_detail.sql" />
     <Build Include="Inventory Design\Inventory_audit.sql" />
     <Build Include="Inventory Design\Inventory_audit_detail.sql" />
+    <Build Include="Users\user_permissions.sql" />
+    <Build Include="Users\user_master.sql" />
+    <Build Include="Hotel Design\Room_Asset.sql" />
+    <Build Include="Hotel Design\Room_asset_list.sql" />
+    <Build Include="Hotel Design\Room_inspection_type.sql" />
+    <Build Include="Hotel Design\FASoftAssetAudit.sql" />
+    <Build Include="Hotel Design\FASoftAsset.sql" />
+    <Build Include="Users\user_access.sql" />
+    <Build Include="Employee\EmployeeDepartmentMaster.sql" />
+    <Build Include="Users\module_access.sql" />
+    <Build Include="Users\form_access.sql" />
+    <Build Include="Users\form_item_access.sql" />
+    <Build Include="Users\user_profile.sql" />
+    <Build Include="Customer\customer_audit.sql" />
+    <Build Include="Customer\customer_privileges.sql" />
+    <Build Include="Customer\customer_rewards.sql" />
+    <Build Include="Lundary Design\Lundry_category.sql" />
+    <Build Include="Customer\company_room_rate.sql" />
+    <Build Include="Customer\company_privileges.sql" />
+    <Build Include="Customer\company_staff_type.sql" />
+    <Build Include="Customer\company_rights_level.sql" />
+    <Build Include="Maintanance Design\Property_Item.sql" />
+    <Build Include="FB\fb_table.sql" />
+    <Build Include="FB\fb_table_activity.sql" />
+    <Build Include="FB\fb_table_info.sql" />
+    <Build Include="FB\fb_invoice.sql" />
+    <Build Include="FB\fb_invoice_detail.sql" />
+    <Build Include="FB\fb_items.sql" />
+    <Build Include="FB\sales_menu_details.sql" />
+    <Build Include="FB\pos_type.sql" />
+    <Build Include="FB\fb_activity_log.sql" />
+    <Build Include="FB\shift_information.sql" />
+    <Build Include="FB\fb_payment.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="employee\employee_phones.sql" />

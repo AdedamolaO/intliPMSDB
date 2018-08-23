@@ -1,14 +1,17 @@
 ﻿CREATE TABLE [dbo].[Room_Insp_log]
 (
-	[Insp_group_id] INT NOT NULL PRIMARY KEY, 
-    [Num_of_Rooms] NCHAR(10) NULL, 
-    [Insp_date] NCHAR(10) NULL, 
-    [Manager_id] NCHAR(10) NULL, 
-    [FD_supervisor] NCHAR(10) NULL, 
-    [Ins_status] NCHAR(10) NULL, 
-    [date_created] NCHAR(10) NULL, 
-    [created_by] NCHAR(10) NULL, 
-    [date_updated] NCHAR(10) NULL, 
-    [updated_by] NCHAR(10) NULL, 
-    [replication_status] NCHAR(10) NULL
+	[Insp_group_id] INT NOT NULL IDENTITY(1,1) PRIMARY KEY, 
+    [Num_of_Rooms] INT NULL, 
+    [Insp_date] DATETIME NULL, 
+    [Manager_id] INT NULL, 
+    [FD_supervisor] INT NULL, 
+    [Ins_status] INT NULL DEFAULT 0, 
+    [date_created] DATETIME NULL, 
+    [created_by] VARCHAR(50) NULL, 
+    [date_updated] DATETIME NULL, 
+    [updated_by] VARCHAR(50) NULL, 
+    [replication_status] BIT NULL, 
+    [insp_group_name] VARCHAR(50) NULL, 
+    CONSTRAINT [FK_Room_Insp_log_ToEmployee_ManagerId] FOREIGN KEY ([Manager_id]) REFERENCES [Employee_master]([employee_id]), 
+    CONSTRAINT [FK_Room_Insp_log_ToEmployee_FD_Supervisor] FOREIGN KEY ([FD_supervisor]) REFERENCES [Employee_master]([employee_id])
 )
